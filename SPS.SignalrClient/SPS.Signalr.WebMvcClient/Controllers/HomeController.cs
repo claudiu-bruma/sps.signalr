@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.Extensions.Logging;
 using SPS.Common;
 using SPS.Signalr.WebMvcClient.Models;
 
@@ -19,7 +18,7 @@ namespace SPS.Signalr.WebMvcClient.Controllers
     public class HomeController : Controller
     {
         HubConnection connection;
-        const string hubUrl = @"http://local.docker.internal:44384/ChatHub"; 
+        const string hubUrl = @"http://local.docker.internal:62621/ChatHub"; 
 
         public HomeController( )
         { 

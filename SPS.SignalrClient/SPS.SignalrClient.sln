@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPS.Common", "SPS.Common\SP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPS.Signalr.WebMvcClient", "SPS.Signalr.WebMvcClient\SPS.Signalr.WebMvcClient.csproj", "{31189D70-5BC8-463F-A3C2-E65EC45124C7}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D884BC0C-C859-43FC-9227-9D68390A2BB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{31189D70-5BC8-463F-A3C2-E65EC45124C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31189D70-5BC8-463F-A3C2-E65EC45124C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31189D70-5BC8-463F-A3C2-E65EC45124C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D884BC0C-C859-43FC-9227-9D68390A2BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D884BC0C-C859-43FC-9227-9D68390A2BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D884BC0C-C859-43FC-9227-9D68390A2BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D884BC0C-C859-43FC-9227-9D68390A2BB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

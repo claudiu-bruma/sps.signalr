@@ -8,7 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["SPS.Signalr.WebMvcClient/SPS.Signalr.WebMvcClient.csproj", "SPS.Signalr.WebMvcClient/"]
-COPY ["SPS.Common/SPS.Common.csproj", "SPS.Common/"]
 RUN dotnet restore "SPS.Signalr.WebMvcClient/SPS.Signalr.WebMvcClient.csproj"
 COPY . .
 WORKDIR "/src/SPS.Signalr.WebMvcClient"
