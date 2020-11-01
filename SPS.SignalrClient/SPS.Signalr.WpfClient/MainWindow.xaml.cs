@@ -12,7 +12,7 @@ namespace SignalRChatClient
     public partial class MainWindow : Window
     {
         HubConnection connection;
-        const string hubUrl = @"https://localhost:44385/ChatHub";
+        const string hubUrl = @"http://local.docker.internal:44384/ChatHub";
         public MainWindow()
         {
             InitializeComponent();

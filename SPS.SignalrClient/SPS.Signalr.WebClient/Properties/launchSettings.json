@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:52605",
-      "sslPort": 44384
+      "applicationUrl": "http://localhost:61169",
+      "sslPort": 44381
     }
   },
   "profiles": {
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SPS.SignalrClient": {
+    "SPS.Signalr.WebClient": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
@@ -26,10 +26,9 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "httpPort": "44384",
-      "launchUrl": "http://local.docker.internal:44384/",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
-      "useSSL": false
+      "useSSL": true
     }
   }
 }

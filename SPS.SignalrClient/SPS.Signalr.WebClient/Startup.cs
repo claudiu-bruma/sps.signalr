@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SPS.SignalrClient.Hubs;
 
-namespace SPS.SignalrClient
+namespace SPS.Signalr.WebClient
 {
     public class Startup
     {
@@ -25,18 +24,6 @@ namespace SPS.SignalrClient
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("allowAll",
-                                  builder =>
-                                  {
-                                      builder.AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .SetIsOriginAllowed((host) => true)
-                        .AllowCredentials();
-                                  });
-            });
-            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,13 +43,13 @@ namespace SPS.SignalrClient
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting(); 
-                 app.UseCors("allowAll");
+            app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
     }

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div id="main-container" data-hubUrl="http://local.docker.internal:44384/ChatHub">
+    <form asp-controller="Home" asp-action="SendMessage" method="post">
+        @model SPS.Signalr.WebMvcClient.Controllers.Message
+        @Html.LabelFor(m => m.User)
+        <input type="text" asp-for="User" />
+        @Html.LabelFor(m => m.MessageContent)
+        <input type="text" asp-for="MessageContent" />
+        <button type="submit" value="send">Send</button>
+    </form>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
