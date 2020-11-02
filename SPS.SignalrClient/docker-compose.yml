@@ -1,15 +1,6 @@
 version: '3.4'
 
 services:
-  sps.signalrclient:
-    image: ${DOCKER_REGISTRY-}spssignalrclient
-    build:
-      context: .
-      dockerfile: SPS.SignalrClient/Dockerfile
-    ports:
-      - 62621:80
-      - 62631:443
-
   sps.signalr.webmvcclient:
     image: ${DOCKER_REGISTRY-}spssignalrwebmvcclient
     build:
@@ -18,3 +9,12 @@ services:
     ports:
       - 62622:80
       - 62632:443
+
+  sps.signalrclient:
+    image: ${DOCKER_REGISTRY-}spssignalrclient
+    build:
+      context: .
+      dockerfile: SPS.SignalrClient/Dockerfile
+    ports:
+      - 62621:80
+      - 62631:443

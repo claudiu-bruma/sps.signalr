@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -18,7 +15,7 @@ namespace SPS.Signalr.WebMvcClient.Controllers
     public class HomeController : Controller
     {
         HubConnection connection;
-        const string hubUrl = @"http://local.docker.internal:62621/ChatHub"; 
+        private string hubUrl = @"http://SPS.SignalrClient_1:80/ChatHub"; 
 
         public HomeController( )
         { 
@@ -29,7 +26,7 @@ namespace SPS.Signalr.WebMvcClient.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> SendMessage(Message message)
+        public async Task<IActionResult> SendMessage([FromBody]Message message)
         {    
             connection = new HubConnectionBuilder()
                 .WithUrl(hubUrl)

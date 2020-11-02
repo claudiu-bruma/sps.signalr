@@ -7,15 +7,17 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div id="main-container" data-hubUrl="http://local.docker.internal:44384/ChatHub">
-    <form asp-controller="Home" asp-action="SendMessage" method="post">
+<div id="main-container" data-hubUrl="http://localhost:62621/ChatHub">   
+    <div>
         @model SPS.Signalr.WebMvcClient.Controllers.Message
         @Html.LabelFor(m => m.User)
-        <input type="text" asp-for="User" />
+        <input type="text" asp-for="User" id="User" />
         @Html.LabelFor(m => m.MessageContent)
-        <input type="text" asp-for="MessageContent" />
-        <button type="submit" value="send">Send</button>
-    </form>
+        <input type="text" asp-for="MessageContent" id="MessageContent" />
+        <button type="button" id="sendMessage" value="send">Send</button>
+    </div>
+
+        
 </div>
 <div class="row">
     <div class="col-6">
