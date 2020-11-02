@@ -36,7 +36,7 @@ namespace SPS.Signalr.WebMvcClient.Controllers
             var aesEncriptedMesage = AesCryptoHelper.EncryptString_Aes(message.MessageContent);
             await connection.InvokeAsync("SendMessage", message.User, aesEncriptedMesage);
 
-            return View("Index");
+            return new OkResult();
         }
         public IActionResult Privacy()
         {
